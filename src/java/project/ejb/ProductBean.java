@@ -41,14 +41,14 @@ public class ProductBean {
     public Double getNonVATPrice(Product product, int vat) {
         Double vatPrice = product.getPrice();
 
-        Double notVatPrice = -((vatPrice / 100) * vat);
+        Double nonVatPrice = -((vatPrice / 100) * vat);
 
 
-        logger.info("Product's non vat price: " + notVatPrice);
-        product.setPrice(notVatPrice);
+        logger.info("Product's non vat price: " + nonVatPrice);
+        product.setPrice(nonVatPrice);
 
         entityManager.persist(product);
 
-        return notVatPrice;
+        return nonVatPrice;
     }
 }
